@@ -12,13 +12,14 @@ def home_view(request):
 
     ramdom_id = random.randint(1,3)
     article_obj = Article.objects.get(id=ramdom_id)
-    
-
+    article_queryset = Article.objects.all()
+   
     context = {
         "object": article_obj,
         "title": article_obj.title,
         "id": article_obj.id,
-        "content": article_obj.content
+        "content": article_obj.content,
+        "object_list": article_queryset
     }
 
     HTML_STRING = render_to_string("home-view.html",context)
