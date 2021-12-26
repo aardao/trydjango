@@ -1,1 +1,2 @@
+git commit -m "0.0.6 C17 primeras templates"
 git commit -m "0.0.5 C16 una vista que lee una tabla"
