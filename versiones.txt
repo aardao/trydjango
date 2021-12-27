@@ -1,4 +1,5 @@
 
+git commit -m "0.0.9 C21 regisgtando modelos en admin"
 git commit -m "0.0.8 C19 url dinamicas"
 git commit -m "0.0.7 C18 templates iterar queryset"
 git commit -m "0.0.6 C17 primeras templates"

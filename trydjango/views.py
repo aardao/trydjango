@@ -9,11 +9,11 @@ from django.template.loader import render_to_string
 
 
 
-def home_view(request, id=None, *args, **kwargs):
+def home_view(request, *args, **kwargs):
     name = "Justin"
 
     print(args,kwargs)
-    print(id)
+ 
     ramdom_id = random.randint(1,3)
     article_obj = Article.objects.get(id=ramdom_id)
     article_queryset = Article.objects.all()
