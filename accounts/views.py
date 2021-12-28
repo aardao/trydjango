@@ -12,6 +12,7 @@ def login_view(request):
         password=request.POST.get("password")
         #print(username, password)
         user = authenticate(request,username=username, password=password)
+        login(request,user)
         if user is None:
             context = {"error": "Invalid username or password"}       
             return render(request,'accounts/login.html',context)
