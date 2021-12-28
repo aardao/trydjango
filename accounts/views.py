@@ -1,9 +1,12 @@
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 
 # Create your views here.
 
 def login_view(request):
+    # una forma para que no logees a un usuario que ya está logeado
+    # if request.user.is_authenticated:
+    #     return render(request,"acounts/already-logged-in.html",{})
     if request.method=='POST':
         username=request.POST.get("username")
         password=request.POST.get("password")
@@ -17,8 +20,10 @@ def login_view(request):
 
 
 def logout_view(request):
-    context = None
-    return render(request,'accounts/logoutn.html',{})
+    if request.method=='POST':
+        logout(request)
+        return redirect("/login/")
+    return render(request,'accounts/logout.html',{})
 
 def register_view(request):
     context = None

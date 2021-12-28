@@ -1,4 +1,5 @@
-git commit -m "0.0.14 C24 create login view and authenticate user"
+git commit -m "0.0.13 C25 logout view"
+git commit -m "0.0.12 C24 create login view and authenticate user"
 git commit -m "0.0.11 C23 basic html form, vista que se llama con GET y POST a la vez"
 git commit -m "0.0.10 C22 search form and request data"
 git commit -m "0.0.9 C21 regisgtando modelos en admin"
