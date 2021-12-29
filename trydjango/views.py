@@ -6,6 +6,7 @@ from django.http  import HttpResponse
 import random
 from articles.models import Article
 from django.template.loader import render_to_string
+from django.shortcuts import render
 
 
 
@@ -26,12 +27,8 @@ def home_view(request, *args, **kwargs):
         "object_list": article_queryset
     }
 
-    HTML_STRING = render_to_string("home-view.html",context)
+    #otra forma de renderizar la plantilla pero sin mandar el request.
+    #HTML_STRING = render_to_string("home-view.html",context)   
+    #return HttpResponse(HTML_STRING)
 
-    # HTML_STRING = """
-    # <h1>{title}  ({id})!</h1>
-    # <p>{content}!</p>
-    # """.format(**context)
-
-   
-    return HttpResponse(HTML_STRING)
+    return render(request, "home-view.html", context)
