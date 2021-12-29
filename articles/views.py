@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from .models import Article
+from articles.models import Article
+from .forms import ArticleForm
 
 def article_search_view(request):
     #print('article_search_view')
@@ -21,13 +22,44 @@ def article_search_view(request):
     }
     return render(request,"articles/search.html",context=context)
 
+# @login_required
+# def article_create_view(request):
+#     #esto crea un formulario vacio siempre
+#     print('article_create_view parte1')
+#     form2 = ArticleForm()
+#     print('parte1')
+#     context={
+#         "form": form2
+#     }
+#     if request.method=="POST":
+#         #si el metodo es post, el formulario viene relleno
+#         print('article_create_view parte2')
+#         form=ArticleForm(request.POST)
+#         context['form']=form
+#         if form.is_valid():
+#             print('article_create_view parte3')
+#             title=form.cleaned_data.get("title")
+#             content=form.cleaned_data.get("content")
+#             print(title,content)
+#             article_object = Article.objects.create(title=title, content=content)
+#             context['object']=article_object
+#             context['created']=True
+#     return render(request,"articles/create.html",context)
+
+
 @login_required
 def article_create_view(request):
-    print('article_create_view')
-    context={}
-    if request.method=="POST":
-        title=request.POST.get("title")
-        content=request.POST.get("content")
+    
+    print('article_create_view parte1')
+    form = ArticleForm(request.POST or None)
+    print('parte1')
+    context={
+        "form": form
+    }
+    if form.is_valid():
+        print('article_create_view parte3')
+        title=form.cleaned_data.get("title")
+        content=form.cleaned_data.get("content")
         print(title,content)
         article_object = Article.objects.create(title=title, content=content)
         context['object']=article_object
