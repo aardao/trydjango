@@ -1,3 +1,4 @@
+git commit -m "0.0.17 C29 register user via built in model form"
 git commit -m "0.0.16 C28 model forms and clean data"
 git commit -m "0.0.15 C27 basic django forms"
 git commit -m "0.0.14 C26 login_required"
