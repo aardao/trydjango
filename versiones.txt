@@ -2,6 +2,7 @@ Try Django 3.2 Python Web Development Tutorial Series
     https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
 
 
+git commit -m "0.0.22 C37 slug fields"
 git commit -m "0.0.21 C36 cchanging models and fields"
 git commit -m "0.0.20 C32 prepare django for digital ocean platform"
     https://www.codingforentrepreneurs.com/blog/prepare-django-for-digital-ocean-app-platform
