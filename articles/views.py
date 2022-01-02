@@ -5,7 +5,7 @@ from articles.models import Article
 from .forms import ArticleForm
 
 def article_search_view(request):
-    #print('article_search_view')
+    print('article_search_view')
     #print(request.GET)  
     query_dict = request.GET  # this is a dictionary
     
