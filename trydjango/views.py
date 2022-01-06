@@ -15,7 +15,7 @@ def home_view(request, *args, **kwargs):
 
     print(args,kwargs)
  
-    ramdom_id = random.randint(21,25)
+    ramdom_id = random.randint(21,23)
     article_obj = Article.objects.get(id=ramdom_id)
     article_queryset = Article.objects.all()
    

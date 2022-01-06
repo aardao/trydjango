@@ -1,1 +1,2 @@
-trydjango
+Try Django 3.2 Python Web Development Tutorial Series
+    https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
