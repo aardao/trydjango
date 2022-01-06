@@ -17,6 +17,9 @@ class Article(models.Model):
     publish = models.DateField(auto_now_add=False, auto_now=False,
         default=timezone.now,null=True, blank=True)
 
+    def get_absolute_url(self):
+        return f'/articles/{self.slug}/'
+
     def save(self, *args, **kwargs):
         # if self.slug is None:
         #     self.slug=slugify(self.title)
