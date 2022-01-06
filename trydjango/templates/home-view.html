@@ -5,6 +5,8 @@
 
     <h1>{{ object.title }}  ({{ id }})!</h1>
     <p>{{ content }}!</p>
+
+    <a href='{% url "article-create" %}'>Create article</a>
     <ul>{% for x in  object_list %}
             {% if x.title %}
                 <li><a href='{{ x.get_absolute_url }}'>{{ x.title }} - {{ x.content }} </a>  </li>

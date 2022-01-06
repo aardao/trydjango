@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
 
@@ -57,6 +57,10 @@ def article_create_view(request):
     if form.is_valid():
         article_object = form.save()
         context['form']= ArticleForm()
+        #una forma de redirect
+        return redirect(article_object.get_absolute_url())
+        #otra forma de redirect
+        #return redirect('article-detail',slug=article_object.slug)
     return render(request,"articles/create.html",context)
 
 
