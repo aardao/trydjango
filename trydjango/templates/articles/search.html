@@ -3,11 +3,13 @@
 
 {% block content %}
 
-{% if object %}
-    search.html
-    <h1>{{ object.title }}</h1>
-    <p>{{ object.content }}</p>
-    <p>{{ object.get_absolute_url }}</p>
-{% endif %}
-
+<ol>
+    {% for object in object_list %}
+        <li>
+            {% if object.title %}
+                <a href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ol>
 {% endblock content %}

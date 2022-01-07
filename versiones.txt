@@ -1,6 +1,7 @@
 Try Django 3.2 Python Web Development Tutorial Series
     https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
 
+git commit -m "0.0.29 C46 complex search using django Q"
 git commit -m "0.0.28 C45 urls reverse"
 git commit -m "0.0.27 C44 get_absolute_url"
 git commit -m "0.0.26 C43 slugs in dinamyc urls"
