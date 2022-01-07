@@ -1,5 +1,4 @@
 from django.shortcuts import redirect, render
-from django.db.models import Q
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
 
@@ -10,11 +9,9 @@ def article_search_view(request):
     print('article_search_view')
     #print(request.GET)  
     query = request.GET.get('q')  
-    qs = Article.objects.all()
-
-    if query is not None:
-        lookup = Q(title__icontains=query)  | Q(content__icontains=query)
-        qs = Article.objects.filter(lookup)
+    qs = Article.objects.search(query=query)
+    ##puedo hacer cosas más complejas
+    #qs = Article.objects.filter(title__icontains='2').search(query=query)
     context = {
             "object_list" : qs
     }
