@@ -1,6 +1,26 @@
+from django.contrib.admin.helpers import InlineAdminForm
+from django.contrib.auth import get_user_model
 from django.contrib import admin
-from .models import Recipe, RecipeIngredient
+from django.db.models import fields
 
 # Register your models here.
 
-admin.site.register(Recipe)
+
+from .models import Recipe, RecipeIngredient
+
+# User = get_user_model()
+
+
+class RecipeIngredientInLine(admin.StackedInline):
+    model = RecipeIngredient
+    extra=0
+    fields = ['name', 'quantity','unit','directions']
+
+class RecipeAdmin(admin.ModelAdmin):
+    inlines = [RecipeIngredientInLine]
+    list_display = ['id','name', 'user']
+    readonly_fields = ['updated', 'timestamp']
+    search_fields = ['name','user']
+    raw_id_fields = ['user']
+
+admin.site.register(Recipe, RecipeAdmin)

@@ -22,6 +22,9 @@ class Recipe(models.Model):
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return(self.name+'('+str(self.id)+')')
+
 class RecipeIngredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     name = models.CharField(max_length=220)
@@ -33,6 +36,9 @@ class RecipeIngredient(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return(self.name+'('+str(self.id)+')')
 
 # class RecipeImage(models.Model):
 #     recipe = models.ForeignKey(Recipe)
