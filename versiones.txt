@@ -1,6 +1,7 @@
 Try Django 3.2 Python Web Development Tutorial Series
     https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
 
+git commit -m "0.0.32 C50 app recipes, modelo"
 git commit -m "0.0.31 C49 basic data connections with foreyng keys"
 git commit -m "0.0.30 C47 - Model Managers & Custom QuerySets for Search"
 git commit -m "0.0.29 C46 complex search using django Q"
