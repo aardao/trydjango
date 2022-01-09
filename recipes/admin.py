@@ -14,7 +14,7 @@ from .models import Recipe, RecipeIngredient
 class RecipeIngredientInLine(admin.StackedInline):
     model = RecipeIngredient
     extra=0
-    readonly_fields = ['quantity_as_float']
+    readonly_fields = ['quantity_as_float', 'as_mks', 'as_imperial']
     #fields = ['name', 'quantity', 'quantity_as_float','unit','directions']
 
 class RecipeAdmin(admin.ModelAdmin):
