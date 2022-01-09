@@ -1,5 +1,7 @@
 import re
 from django.db import models
+from django.urls import reverse
+
 from django.conf import settings
 
 import pint
@@ -30,7 +32,7 @@ class Recipe(models.Model):
     active = models.BooleanField(default=True)
 
     def get_absolute_url(self):
-        return "/pantry/recipes/"
+        return reverse("recipes:detail", kwargs={"id":self.id})
 
     def __str__(self):
         return(self.name+'('+str(self.id)+')')

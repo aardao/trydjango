@@ -1,6 +1,7 @@
 Try Django 3.2 Python Web Development Tutorial Series
     https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
 
+git commit -m "0.0.38 C58 - Django urls, includes, and app name"
 git commit -m "0.0.37 C57 - CRUD Views for Recipe Model"
 git commit -m "0.0.36 C56 - Use Python Pint to Convert Units"
 git commit -m "0.0.35 C55 - Auto Set Quantity as a Float"
