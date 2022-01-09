@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 # Create your models here.
+from .validators import  validate_unit_of_measure
 
 """
 - Global 
@@ -30,7 +31,7 @@ class RecipeIngredient(models.Model):
     name = models.CharField(max_length=220)
     description = models.TextField(null=True, blank=True)
     quantity =  models.CharField(max_length=50) 
-    unit = models.CharField(max_length=50)
+    unit = models.CharField(max_length=50,validators=[validate_unit_of_measure])
     
     directions = models.TextField(null=True, blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
