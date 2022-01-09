@@ -7,7 +7,7 @@ from .views import (
     recipe_update_view, 
 )
 
-appname = 'recipes'  #recipes:detail
+app_name = 'recipes'  #recipes:detail
 urlpatterns = [
     path("", recipe_list_view, name="list"),
     path("create/", recipe_create_view,name="create"),

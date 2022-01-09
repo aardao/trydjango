@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+Detalle receta:  
+<h1>{{ object.name }} <small>{% if object.get_edit_url %}<a href='{{ object.get_edit_url }}'>Edit</a></small>{% endif %}</h1>
+<p>Description: {{ object.description }}</p>
+<p>Directions: {{ object.directions }}</p>
+<p>Author {{ object.user }} 
+    {% if request.user == object.user %}
+        , Soy yo!! 
+    {% endif %}
+</p>
+
+{% for ingredient in object.get_ingredients_children %}
+    <h1>{{ ingredient.name }}</h1>
+    <p>{{ ingredient.as_imperial }}</p>
+    <p>{{ ingredient.as_mks }}</p>
+
+{% endfor %}
+<p>{{ object.get_absolute_url }}</p>
+{% endblock content %}
