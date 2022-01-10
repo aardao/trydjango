@@ -36,19 +36,21 @@ def recipe_update_view(request, id=None):
     print('recipe_update_view')
     obj = get_object_or_404(Recipe,id=id,user=request.user)
     form = RecipeForm(request.POST or None,instance=obj)
-    #form_2 = RecipeIngredientForm(request.POST or None)
+    form_2 = RecipeIngredientForm(request.POST or None)
     context = {
         "object": obj,
         "form": form,
-      #  "form_2": form_2,
+        "form_2": form_2,
         }
-    #if ([form.is_valid(), form_2.is_valid()]):   
-    if all([form.is_valid()]):  
-        print('validado')
-        form.save()
-        #form_2.save(commit=False)
+    if all([form.is_valid(), form_2.is_valid()]):   
+        parent = form.save(commit=False)
+        parent.save()
+        child = form_2.save(commit=False)
+        child.recipe = parent 
+        child.save()
         print("form", form.cleaned_data)
-        #print("form_2", form_2.cleaned_data)
+        print("form_2", form_2.cleaned_data)
+        
         context['message']='Data saved.'    
     return render(request,"recipes/create-update.html", context)
     

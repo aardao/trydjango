@@ -13,7 +13,11 @@
         {% csrf_token %}        
         {{ form.as_p }}
         <button style='margin-top:10px;' type="submit">Save</button>
-        
+        {% if form_2 %}
+            <h3>Ingredients</h3>
+            {{ form_2.as_p }}
+        {% endif %}
+
     </form>
 </div>
 
