@@ -1,6 +1,7 @@
 Try Django 3.2 Python Web Development Tutorial Series
     https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
 
+git commit -m "0.0.41 C61 - Manage QuerySets with Django Formsets + modelformset factory "
 git commit -m "0.0.40 C60 - Django 2 Forms, 1 View"
 git commit -m "0.0.39 C59 - CRUD Templates for the Recipes App"
 git commit -m "0.0.38 C58 - Django urls, includes, and app name"

@@ -12,12 +12,14 @@
     <!-- <form  action='.' method="POST"> aqui vale el punto solo xq se llama igual?-->
         {% csrf_token %}        
         {{ form.as_p }}
-        <button style='margin-top:10px;' type="submit">Save</button>
-        {% if form_2 %}
-            <h3>Ingredients</h3>
-            {{ form_2.as_p }}
-        {% endif %}
 
+
+        
+        {% if formset %}
+            <h3>Ingredients</h3>
+            {{ formset.as_p }}
+        {% endif %}
+        <button style='margin-top:10px;' type="submit">Save</button>
     </form>
 </div>
 
