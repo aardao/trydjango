@@ -38,7 +38,8 @@ def recipe_update_view(request, id=None):
     form = RecipeForm(request.POST or None,instance=obj)
     #form_2 = RecipeIngredientForm(request.POST or None)
     #Formset = modelformset_factory(Model, form=ModelForm, extra=0)
-    RecipeIngredientFormset = modelformset_factory(RecipeIngredient, form=RecipeIngredientForm, extra=0)
+    RecipeIngredientFormset = modelformset_factory(RecipeIngredient, 
+        form=RecipeIngredientForm, extra=0)
     qs = obj.recipeingredient_set.all()
     formset = RecipeIngredientFormset(request.POST or None,queryset=qs)
     context = {
@@ -46,15 +47,15 @@ def recipe_update_view(request, id=None):
         "form": form,
         "formset": formset,
         }
+    #if request.method == "POST":
+    #    print(request.POST)
     if all([form.is_valid(), formset.is_valid()]):   
         parent = form.save(commit=False)
         parent.save()
 
         for form in formset:
             child = form.save(commit=False)
-            if child.recipe is None:
-                print("Added new")
-                child.recipe = parent
+            child.recipe = parent
             child.save()
         context['message']='Data saved.'    
     return render(request,"recipes/create-update.html", context)
