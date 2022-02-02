@@ -11,3 +11,5 @@ python manage.py shell
 python manage.py createsuperuser admin/nimda
 
 python manage.py startapp accounts
+
+python manage.py dumpdata recipes --indent  4 > fixtures\recipes.json
