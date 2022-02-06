@@ -1,6 +1,7 @@
 Try Django 3.2 Python Web Development Tutorial Series
     https://www.youtube.com/playlist?list=PLEsfXFp6DpzRMby_cSoWTFw8zaMdTEXgL
 
+git commit -m "0.0.48 C68 - The HTMX Approach to Editing QuerySets"
 git commit -m "0.0.47 C67 - HMTX & JavaScript Working Together"
 git commit -m "0.0.46 C66 - HTMX, JavaScript & Django Fixtures"
 git commit -m "0.0.45 C65 - Dynamic New Forms in Django Formset via HTMX"
